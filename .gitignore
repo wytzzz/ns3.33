@@ -2,4 +2,4 @@
 *.pyc
 *.so
 *.o
-/build
+build/*
