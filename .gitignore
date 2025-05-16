@@ -1,3 +1,5 @@
 .waf*
 *.pyc
 *.so
+*.o
+/build
