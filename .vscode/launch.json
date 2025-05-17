@@ -1,0 +1,33 @@
+{
+  // 使用 IntelliSense 了解相关属性。 
+  // 悬停以查看现有属性的描述。
+  // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    
+    {
+      "type": "lldb",
+      "name": "attch",
+      "request": "attach",
+      "pid": "${command:pickProcess}",  // 选择进程
+    },
+
+     {
+      "type": "lldb",
+      "name": "launch",
+      "request": "launch",
+      "env": {
+                "LD_LIBRARY_PATH": "/usr/network/ns-allinone-3.33/ns-3.33/build/lib:${env:LD_LIBRARY_PATH}"
+      },
+      "program": "/usr/network/ns-allinone-3.33/ns-3.33/build/scratch/dqc-test",
+      "args": [],
+      "cwd": "/usr/network/ns-allinone-3.33/ns-3.33/build/",  // 设置工作目录
+      // "initCommands": [
+      //     "settings set target.source-map ../ /usr/network/ns-allinone-3.33/ns-3.33/",
+      // ]
+    }
+  ]
+}
+
+
+

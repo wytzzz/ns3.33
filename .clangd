@@ -1,4 +1,0 @@
-CompileFlags:
-  Add: 
-    - -I/Users/bytedance/workspace/network/quiche/
-    - -I/Users/bytedance/workspace/network/ns-allinone-3.33/ns-3.33/build

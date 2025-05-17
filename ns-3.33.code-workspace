@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "./src/dqc"
+		},
+		{
+			"path": "./scratch"
+		},
+		{
+			"path": "./traces"
+		},
+		{
+			"path": "."
+		}
+	],
+
+"settings": {
+	"clangd.path": "/usr/bin/clangd",
+	"clangd.arguments": [
+		"--compile-commands-dir=. -I./build"
+	],
+}	
+}
