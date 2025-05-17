@@ -1,0 +1,71 @@
+FROM ubuntu:20.04
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && \
+    apt-get install -y \
+        git \
+        g++ \
+        python3 \
+        python3-dev \
+        pkg-config \
+        sqlite3 \
+        cmake \
+        mercurial \
+        qt5-default \
+        autoconf \
+        cvs \
+        bzr \
+        unrar \
+        gdb \
+        valgrind \
+        gsl-bin \
+        libgsl-dev \
+        libgslcblas0 \
+        flex \
+        bison \
+        libfl-dev \
+        g++-3.4 \
+        gcc-3.4 \
+        tcpdump \
+        sqlite \
+        sqlite3 \
+        libsqlite3-dev \
+        libgtk2.0-0 \
+        libgtk2.0-dev \
+        libgtk-3-dev \
+        libxml2 \
+        libxml2-dev \
+        vtun \
+        lxc \
+        uml-utilities \
+        uncrustify \
+        doxygen \
+        graphviz \
+        imagemagick \
+        texlive \
+        texlive-extra-utils \
+        texlive-latex-extra \
+        texlive-font-utils \
+        dvipng \
+        latexmk \
+        python3-sphinx \
+        dia \
+        gir1.2-goocanvas-2.0 \
+        python3-gi \
+        python3-gi-cairo \
+        python3-pygraphviz \
+        gir1.2-gtk-3.0 \
+        ipython3 \
+        libboost-all-dev \
+        openmpi-bin \
+        openmpi-common \
+        openmpi-doc \
+        libopenmpi-dev && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /usr 
+
+RUN wget https://www.nsnam.org/release/ns-allinone-3.33.tar.bz2  && \
+    tar -jxvf ns-allinone-3.33.tar.bz2
+
+RUN cd ns-allinone-3.33 && ./build.py --enable-examples --enable-tests
