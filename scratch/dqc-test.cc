@@ -27,9 +27,11 @@ static NodeContainer BuildExampleTopo (uint64_t bps,
     pointToPoint.SetDeviceAttribute ("DataRate", DataRateValue  (DataRate (bps)));
     pointToPoint.SetChannelAttribute ("Delay", TimeValue (MilliSeconds (msDelay)));
     auto bufSize = std::max<uint32_t> (DEFAULT_PACKET_SIZE, bps * msQdelay / 8000);
-    pointToPoint.SetQueue ("ns3::DropTailQueue",
-                           "Mode", StringValue ("QUEUE_MODE_BYTES"),
-                           "MaxBytes", UintegerValue (bufSize));
+		pointToPoint.SetQueue ("ns3::DropTailQueue",
+                           "MaxSize", StringValue (std::to_string(5)+"p"));
+    // pointToPoint.SetQueue ("ns3::DropTailQueue",
+    //                        "Mode", StringValue ("QUEUE_MODE_BYTES"),
+    //                        "MaxBytes", UintegerValue (bufSize));
     NetDeviceContainer devices = pointToPoint.Install (nodes);
 
     InternetStackHelper stack;
