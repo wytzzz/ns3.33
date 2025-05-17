@@ -1,0 +1,1 @@
+docker run -ti --privileged --network=host  --v xxx:usr/network -name $(NAME) hygorjardim/ns3:$(NS3_DOCKER_TAG)
