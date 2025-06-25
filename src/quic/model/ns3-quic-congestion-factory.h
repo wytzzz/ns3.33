@@ -1,4 +1,4 @@
 #pragma once
-namespace quic{
+namespace quic {
 void RegisterExternalCongestionFactory();
 }
